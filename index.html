@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <title>Усы, лапы и хвост</title>
+  </head>
+
+<body>  
+  <header>
+    <img class="header__logo" src='img/logo.svg'>
+    <div class="header__name">
+        Усы, лапы и хвост
+      </div>
+      <div class="header__contacts">
+        <p><i class="fa fa-phone fa-flip-horizontal" aria-hidden="true"></i> +7 (495) 999-99-99</p>         
+      </div>
+  </header>   
+  
+  <section class="cats__cataloge">
+
+    <div class="empty__cat">
+      <img src="/cats-shelter/img/emptyCat.jpg">
+      <p>Место зарезервировано для следующих котиков, которые будут искать дом.</p>
+    </div>
+
+    <div class="cat__card">
+      <div id="cat__img"></div>
+      <h2 id="cat__name"></h2>
+      <p id="cat__age"></p>
+      <p id="cat__description"></p>
+      <p id="cat__rate"></p>
+      <p id="cat__favourite"></p>
+    </div>    
+
+  </section>
+
+    <section class="form">
+    <div class="form__containter">
+      <h1>Оставьте свои<br>контакты</h1>
+      <p>Расскажем подробнее о каждом котике.<br>Поможем организовать перевозку в другие регионы.<br>Проконсультируем по любым возникшим вопросам.</p>
+      <form>
+        <div class="form__group">          
+          <label for="name">Ваше имя</label>
+          <input type="text" placeholder="Введите имя" id="name">          
+          <label for="email">Электронный адрес</label>
+          <input type="email" placeholder="example@yandex.ru" id="email">          
+          <label for="name">Номер телефона</label>
+          <input type="tel" placeholder="7 (999) 999-99-99" id="phone">                    
+        </div>
+        <button type="submit" class="form__submit">Отправить заявку</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer__container">
+      <div class="footer__group">
+        <h3>Позвонить нам:</h3>
+        <div class="footer__links">
+          <a href="tel:74959999999">+7 (495) 999-99-99</a>          
+        </div>
+        <h3>Приехать к нам:</h3>
+        <div class="footer__links">
+          <a href="https://goo.gl/maps/hRhkiLcWtN59j4nY6" target="_blank">г. Казань, ул. Чистопольская, д. 1</a>          
+        </div>
+      </div>
+      <div class="footer__group">
+        <h3>Наши друзья:</h3>
+        <div class="footer__links">
+          <a href="#">Пёс Барбос</a>
+          <a href="#">Потеряшки</a>          
+          <a href="#">Пушистые хвосты</a>
+        </div>
+      </div>
+      <div class="footer__group">
+        <h3>О нас:</h3>
+        <div class="footer__links">
+          <a href="#">Новости</a>          
+          <a href="#">Стать волонтёром</a>
+          <a href="#">Чем вы можете помочь</a>          
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <div class="popup" onclick="myFunction()">Усы, лапы и хвост © 2022
+        <span class="popuptext" id="myPopup">А это - пасхалка ради проверки поп-апа!<br>Этот поп-ап еще очень молод и прост.<br>Будем расти.&#127802;</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/cats-shelter/script.js"></script>
+
+</body>
+</html>
