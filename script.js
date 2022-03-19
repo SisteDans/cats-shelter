@@ -1,9 +1,4 @@
-// When the user clicks on div, open the popup
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
-
+// База данных котиков
 const cats = [
     {
         "name": "Лара",
@@ -87,33 +82,86 @@ const cats = [
         "id": 9
     }
 ]
-
-function clone() {
-    let clonedCard = document.getElementsByClassName("cat__card")[0].cloneNode(true);    
-    document.getElementsByClassName("cats__cataloge")[0].appendChild(clonedCard);
+    
+// Цикл на год/года/лет после цифры возраста + значение возраста
+function age(number) {   
+  let catAge = ""; 
+    if (number % 10 === 1) {
+        catAge = "Возраст: " + number + " год";
+    } else if (2 <= number % 10 && number % 10 <= 4) {
+        catAge = "Возраст: " + number + " года";
+    } else {
+        catAge = "Возраст: " + number + " лет";
+    }
+    return catAge;
 }
 
+// Переводим рейтинг в иконки лапок
+function rate(counter) {
+    let step = 1;
+    let rateBar = "";          
+    if (counter < 0 || counter > 10) {
+        rateBar = "Указано неверное число рейтинга!"
+    } else {
+    while (step <= counter) {
+        rateBar += "<img src=\"./img/coloredPaw.png\" alt=\"+\">" + " "; 
+        step = step + 1;
+        }
+    while (step > counter && step <= 10) {
+        rateBar += "<img src=\"./img/nonColoredPaw.png\" alt=\"-\">" + " ";
+        step = step + 1;
+        }
+    }
+        return rateBar;
+}
+
+// Создаем карточку
+let newCard = function catCard() {
+    let card = document.createElement("div");
+    card.classList.add('cat__card');
+    card.id = "cat__card";
+    document.getElementById("cats__cataloge").appendChild(card);
+    return card;
+}
+ 
+// Заполняем карточку
+    function renderCard(cat) {
+    let rendering = newCard();
+// Фото котика      
+    const catImg = new Image ();
+    catImg.src = cat.img_link;
+    catImg.classList.add("cat__img");
+    catImg.setAttribute("alt", "Фото котика :3");
+      rendering.appendChild(catImg);
+// Имя котика    
+    const catName = document.createElement("p");
+    catName.innerHTML = cat.name;
+    catName.classList.add("cat__name");
+      rendering.appendChild(catName);
+// Возраст котика    
+    const catAge = document.createElement("p");
+    catAge.innerHTML = age(cat.age);
+    catAge.classList.add("cat__age");
+      rendering.appendChild(catAge);
+// Описание котика    
+    const catInfo = document.createElement("p");
+    catInfo.innerHTML = cat.description;
+    catInfo.classList.add("cat__description");
+      rendering.appendChild(catInfo);
+// Рейтинг котика
+    const catRate = document.createElement("p");
+    catRate.innerHTML = rate(cat.rate);
+    catRate.classList.add("cat__rate");
+      rendering.appendChild(catRate);
+} 
+
+// Выводим карточки котиков на экран согласно количеству котиков в БД    
 for (let i = 0; i < cats.length; i++) {
-document.getElementById("cat__img").innerHTML = "<img src=\"" + cats[i].img_link + "\">";
-document.getElementById("cat__name").innerHTML = cats[i].name;
-if (cats[i].age % 10 === 1) {
-    document.getElementById("cat__age").innerHTML = "Возраст: " + cats[i].age + " год";
-} else if (2 <= cats[i].age % 10 && cats[i].age % 10 <= 4) {
-    document.getElementById("cat__age").innerHTML = "Возраст: " + cats[i].age + " года";
-} else {
-    document.getElementById("cat__age").innerHTML = "Возраст: " + cats[i].age + " лет";
-}
-document.getElementById("cat__description").innerHTML = cats[i].description;
-document.getElementById("cat__rate").innerHTML = "<i class=\"fa fa-star\" aria-hidden=\"true\"></i>".repeat(cats[i].rate);
-  
-document.getElementById("cat__favourite").innerHTML = cats[i].favourite;
-
-clone();
+    renderCard(cats[i]);
 }
 
-let parent = document.getElementsByClassName("cats__cataloge")[0];
-let loveless = document.getElementsByClassName("cat__card")[0];
-parent.removeChild(loveless);
-
-let emptyCat = document.getElementsByClassName("empty__cat")[0];
-document.getElementsByClassName("cats__cataloge")[0].appendChild(emptyCat);
+// Показываем попап по щелчку
+function popUp() {
+    let popup = document.getElementById("myPopUp");
+    popup.classList.toggle("show");
+}

@@ -2,8 +2,7 @@
 <html lang="ru">
 <head> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
-integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://kit.fontawesome.com/68c9556652.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,31 +12,17 @@ integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEB
 
 <body>  
   <header>
-    <img class="header__logo" src='img/logo.svg'>
+    <a href="#"><img class="header__logo" src="./img/logo.svg" alt="Усы, лапы и хвост"></a>
     <div class="header__name">
-        Усы, лапы и хвост
+      <a href="#">Усы, лапы и хвост</a>
       </div>
       <div class="header__contacts">
-        <p><i class="fa fa-phone fa-flip-horizontal" aria-hidden="true"></i> +7 (495) 999-99-99</p>         
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:74959999999">+7 (495) 999-99-99</a></p>         
       </div>
   </header>   
   
-  <section class="cats__cataloge">
-
-    <div class="empty__cat">
-      <img src="/cats-shelter/img/emptyCat.jpg">
-      <p>Место зарезервировано для следующих котиков, которые будут искать дом.</p>
-    </div>
-
-    <div class="cat__card">
-      <div id="cat__img"></div>
-      <h2 id="cat__name"></h2>
-      <p id="cat__age"></p>
-      <p id="cat__description"></p>
-      <p id="cat__rate"></p>
-      <p id="cat__favourite"></p>
-    </div>    
-
+  <section id="cats__cataloge" class="cats__cataloge">
+     
   </section>
 
     <section class="form">
@@ -88,13 +73,13 @@ integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEB
       </div>
     </div>
     <div class="footer__copyright">
-      <div class="popup" onclick="myFunction()">Усы, лапы и хвост © 2022
-        <span class="popuptext" id="myPopup">А это - пасхалка ради проверки поп-апа!<br>Этот поп-ап еще очень молод и прост.<br>Будем расти.&#127802;</span>
+      <div class="popup" onclick="popUp()">Усы, лапы и хвост © 2022
+        <span class="popuptext" id="myPopUp">А это - пасхалка ради проверки поп-апа!<br>Этот поп-ап еще очень молод и прост.<br>Будем расти.&#127802;</span>
       </div>
     </div>
   </footer>
 
-  <script src="/cats-shelter/script.js"></script>
+  <script src="./script.js"></script>
 
 </body>
 </html>

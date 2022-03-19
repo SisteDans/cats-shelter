@@ -2,13 +2,12 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 20px;
+  align-content: center;
+  padding: 15px;
   position: sticky;
-  top: 0px;
-  /* background-color: #fff /*#fad399; */
+  top: 0px;  
   background: linear-gradient(#d2691e, #eeb389);
-  z-index: 1;
-  font-size: 17px;
+  z-index: 1;  
 }
 
 body {
@@ -18,18 +17,18 @@ body {
 }
 
 .header__logo {
-  height: 90px;
+  height: 80px;  
 }
 
-.header__name {
+.header__name a {
   font-family: 'Comfortaa', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   color: black;
   font-weight: 600;
 }
 
-.header__contacts {
-  font-size: 19px;
+.header__contacts a {
+  font-size: 18px;
   color: black;
   font-weight: 600;
 }
@@ -37,12 +36,6 @@ body {
 a {
   text-decoration: none;
   color: #000000;
-}
-
-header a {
-  font-size: 15px;
-  font-weight: 600;
-  margin-right: 25px;  
 }
 
 button {
@@ -65,55 +58,53 @@ button:hover {
 }
 
 .cats__cataloge {
-  background:  #ffefd5;
-  padding: 50px;
+  background: #ffefd5;
+  padding: 70px;  
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 1em;
+  grid-template-columns: repeat(5, 1fr);  
+  grid-auto-rows: 580px;
+  grid-row-gap: 70px;    
+  justify-items: center;   
+  justify-content: center;
   align-items: center;
 }
 
 .cat__card {
-  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
-  width: 25vw; 
-  height: 90%; 
-  padding: 20px;
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);  
+  height: 100%; 
+  width: 250px;
+  padding: 20px 20px 5px 20px;
   text-align: center;
   background: #fffbf5;
-  border-radius: 25px;
-  width: 250px;
+  border-radius: 30px;
+  transition: 0.4s ease-in;
 }
 
-.cat__card img {
+.cat__card:hover {  
+  background: linear-gradient(rgb(123, 173, 123), #fff);  
+  padding: 25px 25px 10px 25px;
+}
+
+.cat__img {
   width: 250px;
   height: 250px;
   object-fit: cover;
   object-position: center;
-  border-radius: 7px;  
+  border-radius: 10px;  
 }
 
-.cat__rate {
-  color: #fd6a00;
+.cat__name {
+  font-size: 23px;
+  font-weight: 600;  
 }
 
-.empty__cat {
-  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
-  width: 25vw; 
-  height: 90%; 
-  padding: 20px;
-  text-align: center;
-  background: #fffbf5;
-  border-radius: 25px;
-  width: 250px
-} 
+.cat__description {
+  height: 28%;
+  width: 250px;  
+}
 
-.empty__cat img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 7px;
+.cat__rate img {
+  width: 20px;
 }
 
 .form__containter {
@@ -197,7 +188,7 @@ footer {
 .footer__container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items:flex-start;
 }
 
 .footer__copyright {
@@ -209,8 +200,7 @@ footer {
 
 .footer__group h3 {
   font-size: 17px;
-  color: #855401 /*bb7600*/;
-  /* text-shadow: 1px 1px 1px rgb(71, 40, 0); */
+  color: #855401;  
 }
 
 .footer__links {
@@ -222,7 +212,7 @@ footer {
   margin-bottom: 15px;
 }
 
-/* Popup container - can be anything you want */
+/* Контейнер попапа */
 .popup {
   position: relative;
   display: inline-block;
@@ -230,7 +220,7 @@ footer {
   user-select: none;
 }
 
-/* The actual popup */
+/* Сам попап - окошко */
 .popup .popuptext {
   visibility: hidden;  
   background: linear-gradient(to bottom right, #25e7d8, #cfff99);
@@ -238,7 +228,7 @@ footer {
   text-align: center;
   border-radius: 15px;  
   padding: 8px 0;
-  position: fixed;
+  position: fixed; 
   top: 25%;
   left: 38%;
   width: 25%;
@@ -249,7 +239,7 @@ footer {
   z-index: 5;
 }
 
-/* Toggle this class - hide and show the popup */
+/* Анимация показа попапа */
 .popup .show {
   visibility: visible;
   animation: fadeIn 1s;  
@@ -260,116 +250,101 @@ footer {
   to {opacity: 1;}
 }
 
+/* Убирает анимацию карточек при нажатии на мобильных девайсах */
+@media (hover: none) {
+  .cat__card:hover {  
+    background: linear-gradient(rgb(123, 173, 123), #fff);  
+    padding: 25px 25px 10px 25px;
+  }
+}
+
 /* Планшеты */
 @media (max-width: 1024px) {
-  .about {
-      padding: 115px 20px;
+
+  header {
+    justify-content: space-between;
+  }
+  
+  .header__logo {
+    height: 9vw;    
+  }
+  
+  .header__name a {    
+    font-size: 3vw;
+  }
+  
+  .header__contacts a {
+    display: none;      
+  } 
+
+  .fa-solid {
+    font-size: 4vw;
+    color: rgb(16, 95, 13);
+    padding-right: 30px;
   }
 
-  .about h1 {
-      font-size: 36px;
-      line-height: 40px;
+  .cats__cataloge {
+    grid-template-columns: repeat(2, 1fr);      
+  }    
+ 
+  .form {
+  padding: 40px 15px;
   }
 
-  .about__image {
-      width: 280px;
+  .form h1 {
+  font-size: 30px;
   }
 
-  .about__sun-image {
-      width: 75px;
-      height: 75px;
+  footer {
+  padding: 40px 15px;
   }
+
+  .footer__container {
+  flex-direction: column;
+  }  
 }
 
 /* Мобильные устройства */
 @media (max-width: 720px) {
+
   header {
-      padding: 10px;
+    justify-content: space-between;
   }
-
+  
   .header__logo {
-      height: 20px;
+    height: 10vw;    
+  }
+  
+  .header__name a {    
+    font-size: 4vw;
+  }
+  
+  .header__contacts a {
+    display: none;      
+  } 
+
+  .fa-solid {
+    font-size:5vw;
+    color: rgb(16, 95, 13);
   }
 
-  header a {
-      margin-right: 10px;
-  }
-
-  .about {
-      flex-direction: column-reverse;
-      padding: 50px 10px;
-  }
-
-  .about h1 {
-      font-size: 36px;
-      line-height: 40px;
-  }
-
-  .about__image {
-      width: 100%;
-  }
-
-  .about__sun-image {
-      width: 75px;
-      height: 75px;
-  }
-
+  .cats__cataloge {
+    grid-template-columns: repeat(1, 1fr);      
+  }  
+ 
   .form {
-      padding: 50px 10px;
+  padding: 40px 15px;
   }
 
   .form h1 {
-      font-size: 36px;
-  }
-  
-  .features {
-    padding: 50px 10px;
-  }
-
-  .cards {
-    grid-template-columns: auto;
-  }
-
-  .features__feedback {
-    flex-direction: column;
-  }
-
-  .features__feedback-left {
-    margin-right: 0;
-  }
-  
-  .features__feedback-left h2, .features__box h3 {
-    font-size: 36px;
-  }
-
-  .features__feedback-right {
-    flex-direction: column;
-    align-items: initial;
-  }
-
-  .features__savings-box {
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
-
-  .promo {
-    flex-direction: column-reverse;
-  }
-
-  .promo__right {
-    padding: 50px 10px;
-  }
-
-  .promo__image {
-    width: 100%;
-    height: 500px;
+  font-size: 30px;
   }
 
   footer {
-      padding: 50px 10px;
+  padding: 40px 15px;
   }
 
   .footer__container {
-      flex-direction: column;
-  }
+  flex-direction: column;
+  }  
 }
