@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/68c9556652.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="main.css">
@@ -17,41 +19,21 @@
       <a href="#">Усы, лапы и хвост</a>
       </div>
       <div class="header__contacts">
-        <p><i class="fa-solid fa-phone"></i> <a href="tel:74959999999">+7 (495) 999-99-99</a></p>         
+        <p><a href="tel:74959999999" class="contacts__icon"><i class="fa-solid fa-phone fa-lg"></i></a> <a href="tel:74959999999" class="contacts__number">+7 (495) 999-99-99</a></p>         
       </div>
   </header>   
   
-  <section id="cats__cataloge" class="cats__cataloge">
+  <main id="cats__cataloge">
      
-  </section>
-
-    <section class="form">
-    <div class="form__containter">
-      <h1>Оставьте свои<br>контакты</h1>
-      <p>Расскажем подробнее о каждом котике.<br>Поможем организовать перевозку в другие регионы.<br>Проконсультируем по любым возникшим вопросам.</p>
-      <form>
-        <div class="form__group">          
-          <label for="name">Ваше имя</label>
-          <input type="text" placeholder="Введите имя" id="name">          
-          <label for="email">Электронный адрес</label>
-          <input type="email" placeholder="example@yandex.ru" id="email">          
-          <label for="name">Номер телефона</label>
-          <input type="tel" placeholder="7 (999) 999-99-99" id="phone">                    
-        </div>
-        <button type="submit" class="form__submit">Отправить заявку</button>
-      </form>
-    </div>
-  </section>
+  </main>
 
   <footer>
     <div class="footer__container">
       <div class="footer__group">
-        <h3>Позвонить нам:</h3>
+        <h3>Контакты:</h3>
         <div class="footer__links">
-          <a href="tel:74959999999">+7 (495) 999-99-99</a>          
-        </div>
-        <h3>Приехать к нам:</h3>
-        <div class="footer__links">
+          <a href="tel:74959999999">+7 (495) 999-99-99</a>                  
+          <a href="mailto:example@yandex.ru">example@yandex.ru</a>
           <a href="https://goo.gl/maps/hRhkiLcWtN59j4nY6" target="_blank">г. Казань, ул. Чистопольская, д. 1</a>          
         </div>
       </div>
@@ -71,7 +53,7 @@
           <a href="#">Чем вы можете помочь</a>          
         </div>
       </div>
-    </div>
+    </div>    
     <div class="footer__copyright">
       <div class="popup" onclick="popUp()">Усы, лапы и хвост © 2022
         <span class="popuptext" id="myPopUp">А это - пасхалка ради проверки поп-апа!<br>Этот поп-ап еще очень молод и прост.<br>Будем расти.&#127802;</span>
